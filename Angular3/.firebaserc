@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tcc-pedrofonseca": {
+      "hosting": {
+        "Angular3": [
+          "tcc-pedrofonseca"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tcc-pedrofonseca"
+  }
+}

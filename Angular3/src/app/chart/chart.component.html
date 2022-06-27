@@ -1,0 +1,19 @@
+<p>chart works!</p>
+
+<h2>WELP</h2>
+<plotly-plot [data]="graph.data" [layout]="graph.layout"></plotly-plot>
+
+<div *ngIf="trace$ | async as trace">
+<plotly-plot  [data]="[trace]" [layout]="graph.layout" [useResizeHandler]="true" [style]="{position: 'relative', width: '100%', height: '100%'}"></plotly-plot>
+</div>
+
+<div *ngIf="bpm$ | async as bpm">
+   <plotly-plot  [data]="[bpm]" [layout]="graph.layout" [useResizeHandler]="true" [style]="{position: 'relative', width: '100%', height: '100%'}"></plotly-plot>
+   </div>
+
+<h1> ITEMS: </h1>
+<ul>
+    <li *ngFor="let item of items | async">
+       {{ item | json }}
+    </li>
+  </ul>
