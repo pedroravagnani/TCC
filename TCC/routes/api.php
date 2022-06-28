@@ -15,15 +15,14 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::group([
 
-Route::middleware('auth:api')->get('/token/revoke', function (Request $request) {
-    DB::table('oauth_access_tokens')
-        ->where('user_id', $request->user()->id)
-        ->update([
-            'revoked' => true
-        ]);
-    return response()->json('DONE');
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router){
+
+    route::post('login', 'App\Http\Controllers\AuthController@login');
+    route::post('logout', 'App\Http\Controllers\AuthController@logout');
+    route::post('refresh', 'App\Http\Controllers\AuthController@refresh');
+    route::post('me', 'App\Http\Controllers\AuthController@me');
 });
