@@ -15,6 +15,9 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { AngularFireModule } from '@angular/fire/compat';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -22,7 +25,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
 @NgModule({
   declarations: [
     AppComponent,
-    ChartComponent
+    ChartComponent,
+    NavbarComponent,
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +45,6 @@ PlotlyModule.plotlyjs = PlotlyJS;
     provideFirestore(() => getFirestore())
   ],
   providers: [],
-  bootstrap: [AppComponent, ChartComponent]
+  bootstrap: [AppComponent, ChartComponent,NavbarComponent]
 })
 export class AppModule { }

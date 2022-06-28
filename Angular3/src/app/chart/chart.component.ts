@@ -19,11 +19,14 @@ export class ChartComponent{
   _y: any[] = [];
 
   public graph = {
-    data: [
-        { x: ['2013-10-04 22:23:00', '2013-11-04 22:23:00', '2013-12-04 22:23:00'], y: [2, 6, 3], type: 'scatter', mode: 'lines+points', marker: {color: 'red'} }
-    ],
-    layout: {autosize:true, title: 'A Fancy Plot'}
+    layout: {autosize:true,
+      title:'ECG'}
   };
+  public graph2 = {
+    layout: {autosize:true,
+      title:'BPM'}
+  };
+
 
   constructor(db: AngularFireDatabase, private dataService: DataServiceService) {
     this.items = db.list('/',  ref => ref.limitToLast(500)).valueChanges();
