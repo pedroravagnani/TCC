@@ -18,7 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { LoginComponent } from './login/login.component';
 PlotlyModule.plotlyjs = PlotlyJS;
 
 
@@ -28,7 +28,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     ChartComponent,
     NavbarComponent,
     SignupComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +45,6 @@ PlotlyModule.plotlyjs = PlotlyJS;
     provideFirestore(() => getFirestore())
   ],
   providers: [],
-  bootstrap: [AppComponent, ChartComponent,NavbarComponent]
+  bootstrap: [AppComponent,NavbarComponent]
 })
 export class AppModule { }

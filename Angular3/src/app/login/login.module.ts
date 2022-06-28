@@ -23,6 +23,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  bootstrap:[LoginComponent]
 })
 export class LoginModule { }
